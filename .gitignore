@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# JetBrains PyCharm
+.idea/
+
+# Python
+__pycache__/
+
+# Anaconda environment
+.conda/
+
+# Jupyter Notebooks
+*.ipynb
+
+# tmp
+tmp/
+
+# pyc
+*.pyc
