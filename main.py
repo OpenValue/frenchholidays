@@ -1,8 +1,6 @@
 # coding: utf-8
-from data import PublicHolidays, GeneralHolidays
-from utils import HolidayTools
-import pandas as pd
-import datetime
+from frenchholidays.data import PublicHolidays, GeneralHolidays
+from frenchholidays.utils import HolidayTools
 
 
 def main():
