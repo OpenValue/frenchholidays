@@ -10,15 +10,9 @@ def main():
     holidaytools = HolidayTools(generalholiday.get_general_holiday_as_df(),
                                 publicholiday.get_public_holiday_as_df())
 
-    annee_scolaire = holidaytools.get_annee_scolaire()
-    print(annee_scolaire)
+    print(holidaytools.get_list_of_general_holidays_description())
 
-    composition = holidaytools.get_composition_of_zones()
-    print(composition)
-
-    print(holidaytools.get_next_public_holidays())
-
-    print(holidaytools.get_next_general_holidays(zone="Zone A"))
+    print(holidaytools.get_list_of_public_holidays_description())
 
 
 if __name__ == '__main__':

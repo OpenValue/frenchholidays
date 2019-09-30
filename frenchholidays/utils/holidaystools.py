@@ -61,7 +61,7 @@ class HolidayTools(object):
         return self.__get_list_of_description(self.general_holidays_df)
 
     def get_list_of_public_holidays_description(self):
-        return self.__get_list_of_description(self.general_public_df)
+        return self.__get_list_of_description(self.public_holidays_df)
 
     def __get_list_of_description(self, df):
         if df is not None:
