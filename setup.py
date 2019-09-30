@@ -12,7 +12,7 @@ setuptools.setup(
     long_description="Dataset for french general/public holidays + util functions",
     long_description_content_type="text/markdown",
     url="https://github.com/OpenValue/frenchholidays.git",
-    packages=setuptools.find_packages(where="frenchholidays"),
+    packages=setuptools.find_packages(),
     install_requires=[
         'requests',
         'numpy',
