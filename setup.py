@@ -5,8 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='frenchholidays',
-    version='1.0.0-SNAPSHOT',
-    scripts=['main.py'],
+    version='0.0.1',
     author="Francois Valadier",
     author_email="francois.valadier@openvalue.fr",
     description="Toolbox about french holidays",
