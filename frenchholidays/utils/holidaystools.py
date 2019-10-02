@@ -57,19 +57,27 @@ class HolidayTools(object):
         else:
             return {zone: composition[zone]}
 
-    def get_list_of_general_holidays_description(self):
-        return self.__get_list_of_description(self.general_holidays_df)
+    # def get_list_of_general_holidays_description(self):
+    #   annee_scolaire = self.get_annee_scolaire(input_date_str)
+    #   input_date = pd.to_datetime(input_date_str) if input_date_str is not None else pd.Timestamp.now()
+    #   year = pd.to_datetime(input_date).dt.year
 
-    def get_list_of_public_holidays_description(self):
-        return self.__get_list_of_description(self.public_holidays_df)
+    #   if df is not None:
+    #       df_list = sorted(df.loc[:, "description"].unique().tolist())
+    #   else:
+    #       df_list = None
 
-    def __get_list_of_description(self, df):
-        if df is not None:
-            df_list = sorted(df.loc[:, "description"].unique().tolist())
-        else:
-            df_list = None
+    ##   return df_list
 
-        return df_list
+    def get_list_of_public_holidays_description(self, input_date_str=None):
+        input_date = pd.to_datetime(input_date_str) if input_date_str is not None else pd.Timestamp.now()
+        year = pd.to_datetime(input_date).year
+        df_filtered = self.public_holidays_df[self.public_holidays_df["year"] == year].sort_values("start_date")
+        result = sorted(list(df_filtered.loc[:, ["start_date", "description", "is_alsace_specific"]]\
+                             .to_dict(orient='index').values()),
+                        key=lambda x: x["start_date"])
+
+        return result
 
     def is_general_holidays(self, input_date_str=None, input_zone=None):
         input_date = pd.to_datetime(input_date_str) if input_date_str is not None else pd.Timestamp.now()
